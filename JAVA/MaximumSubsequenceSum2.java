@@ -14,15 +14,15 @@ public class MaximumSubsequenceSum2{
 		}
 		sc.close();
 		if(flag==false){
-            System.out.printf("0 %d %d\n",ar[0],ar[num-1]);
-            return;
-        } 
+            		System.out.printf("0 %d %d\n",ar[0],ar[num-1]);
+            		return;
+       	 	} 
 		dp[0]=ar[0];
 		for(int i=1;i<num;++i)
 			if(dp[i-1]+ar[i]>ar[i]){
 				dp[i]=ar[i]+dp[i-1];
-                pr[i]=pr[i-1];
-            }
+                		pr[i]=pr[i-1];
+            		}
 			else{
 				dp[i]=ar[i];
 				pr[i]=i;
