@@ -5,10 +5,17 @@ int a[100000];
 
 int main()
 {
-	int d,N;
+	int N;
 	cin>>N;
-	for(int i=0;i<N;++i)
+	bool flag=false;
+	for(int i=0;i<N;++i){
 		cin>>a[i];
+		if(a[i]>=0) flag=true;
+	}
+	if(!flag){
+		printf("0 %d %d",a[0],a[N-1]);
+		return 0;
+	}
 	int sum,MaxSum=-1;
 	int is,js;
 	for(int i=0;i<N;++i){
@@ -20,9 +27,8 @@ int main()
 				js=j;
 				MaxSum=sum;
 			}
-			
 		}
 	} 
-	cout<<MaxSum<<' '<<is<<' '<<js;
+	cout<<MaxSum<<' '<<a[is]<<' '<<a[js];
 	return 0;
 } 
